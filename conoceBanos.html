@@ -13,7 +13,29 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <style>
+
+.toggler {
+        width: 500px;
+        height: 200px;
+      }
+      #button {
+        padding: .5em 1em;
+        text-decoration: none;
+      }
+      #effect {
+        position: relative;
+        width: 240px;
+        height: 170px;
+        padding: 0.4em;
+      }
+      #effect h3 {
+        margin: 0;
+        padding: 0.4em;
+        text-align: center;
+      }
+        /**/
         div.jumbotron-fluid {
             background: rgb(40, 66, 40) !important;
             color: burlywood !important;
@@ -170,35 +192,79 @@
             border-radius: 15%;
             
         }
+
+       
+        .oculto {
+            display: none;
+        }
+
+        .visible {
+            display: inline;
+        }
+        
+
+        #enlace2 {
+          
+            color: burlywood;
+            font-family: cursive;
+            border: #07d155 solid 1px;
+        }
+        #enlace3 {
+          
+          color: burlywood;
+          font-family: cursive;
+          border: #07d155 solid 1px;
+      }
+      #enlace4 {
+          
+          color: burlywood;
+          font-family: cursive;
+          border: #07d155 solid 1px;
+      }
+
     </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    
+
+      <link rel="stylesheet" href="estilos.css">
 </head>
 
 <body>
    
-      <!--menu y header-->
+    <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
 
       <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link active"
-                href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="eventos.html">Eventos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link"
-                href="alquiler.html">Alquiler</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="conoceBanos.html">Conoce
-                Baños</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">Sobre nosotros</a>
-        </li>
-
-
-    </ul>
+        <div class="topnav" id="myTopnav">
+            <a href="index.html" class="active">Inicio</a>
+            <a href="eventos.html">Eventos</a>
+            <a href="alquiler.html">Alquiler</a>
+            <a href="conoceBanos.html">Conoce Baños</a>
+            <div class="dropdown">
+              <button class="dropbtn">Actividades
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="conoceBanos.html">Monumentos y patrimonio cultural</a>
+                <a href="conoceBanos.html">Rutas de senderismo</a>
+                <a href="conoceBanos.html">Gastronomia y tradicion</a>
+              </div>
+            </div>
+            <a href="aboutus.html">Sobre nosotros</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+          </div>
+    </ul> 
 
     <div class="jumbotron-fluid">
 
@@ -222,6 +288,16 @@
             Encina
             fue declarado Conjunto Histórico-Artístico en 1969.</p>
     </div>
+
+    
+    </div>
+
+    
+    
+
+
+
+
 <hr>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -257,25 +333,58 @@
 
         <article class="col 2">
 
-            <div class="col-sm-6 col-md-4 "><img class="foto1" src="imagenes/peñalosa.png" alt="">
+            <div class="col-sm-6 col-md-4 "><img class="foto1" src="imagenes/penalosa.png" alt="">
 
 
                 <h3>Monumentos y patrimonio cultural</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam, architecto,
-                    temporibus, eaque expedita
-                    voluptatem a quod blanditiis hic facere consectetur et enim nemo molestias nesciunt
-                    eum quaerat minus mollitia
-                    quas.</p>
+               <!--Desplegable script-->
+               <p id="texto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+                libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis.<span id="adicional1"
+                    class="oculto"> Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                    at posuere ante quam non dolor.Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+                    semper quis,
+                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                    at posuere ante quam non dolor.Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+                    semper quis,
+                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                    at posuere ante quam non dolor.Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+                    semper quis,
+                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                    at posuere ante quam non dolor.</span></p>
+                    
+            <a id="enlace2" href="#" onclick="muestra(); return false;">Seguir leyendo</a>
+        
+           
+
+<!--fin experimento-->
+               
             </div>
 
 
             <div class="col-sm-6 col-md-4"><img class="foto1" src="imagenes/senderismo.png" alt="">
 
                 <h3>Naturaleza y rutas de senderismo</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt magni quaerat sed
-                    veniam, facere sapiente
-                    ducimus eos, cum, cumque beatae aliquid assumenda fuga quos quis ipsam amet.
-                    Consequatur, molestiae facere.</p>
+                             <!--Desplegable script-->
+                             <p id="texto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+                                libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis.<span id="adicional2"
+                                    class="oculto"> Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+                                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                                    at posuere ante quam non dolor.Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+                                    semper quis,
+                                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                                    at posuere ante quam non dolor.Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+                                    semper quis,
+                                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                                    at posuere ante quam non dolor.Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+                                    semper quis,
+                                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                                    at posuere ante quam non dolor.</span></p>
+                            <a id="enlace3" href="#" onclick="muestra2(); return false;">Seguir leyendo</a>
+                        
+                           
+                
+                <!--fin experimento-->
             </div>
 
 
@@ -285,10 +394,26 @@
 
 
                 <h3>Gastronomía y tradición</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In minima labore laborum
-                    adipisci quisquam inventore.
-                    Veritatis molestias, earum fuga id cum magnam tenetur nisi impedit quis ullam
-                    delectus? Vel, corrupti.</p>
+                              <!--Desplegable script-->
+                              <p id="texto">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed mattis enim vitae orci. Phasellus
+                                libero. Maecenas nisl arcu, consequat congue, commodo nec, commodo ultricies, turpis.<span id="adicional3"
+                                    class="oculto"> Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem, semper quis,
+                                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                                    at posuere ante quam non dolor.Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+                                    semper quis,
+                                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                                    at posuere ante quam non dolor.Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+                                    semper quis,
+                                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                                    at posuere ante quam non dolor.Nullam sit amet nisl elementum elit convallis malesuada. Phasellus magna sem,
+                                    semper quis,
+                                    faucibus ut, rhoncus non, mi. Duis pellentesque, felis eu adipiscing ullamcorper, odio urna consequat arcu,
+                                    at posuere ante quam non dolor.</span></p>
+                            <a id="enlace4" href="#" onclick="muestra3(); return false;">Seguir leyendo</a>
+                        
+                           
+                
+                <!--fin experimento-->
             </div>
 
         </article>
@@ -324,6 +449,41 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+
+        <script>
+     
+    
+            function muestra() {
+    
+    var loAdicional1 = document.getElementById("adicional1");
+    loAdicional1.className = "visible";
+    
+    var elEnlace = document.getElementById("enlace2");
+    elEnlace.className = "oculto";
+    
+    }
+    function muestra2() {
+    
+    var loAdicional = document.getElementById("adicional2");
+    
+    
+    loAdicional.className = "visible";
+
+    var elEnlace = document.getElementById("enlace3");
+    elEnlace.className = "oculto";
+
+}
+               function muestra3() {
+    
+    var loAdicional1 = document.getElementById("adicional3");
+    loAdicional1.className = "visible";
+    
+    var elEnlace = document.getElementById("enlace4");
+    elEnlace.className = "oculto";
+    
+    }
+        </script>
+    
 
 
 </body>

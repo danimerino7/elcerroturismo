@@ -143,41 +143,58 @@
             margin-top: 3px;
         }
     </style>
+    <link rel="stylesheet" href="estilos.css">
+
+    <!--confeti-->
+    <style>
+        #confeti{background:none}
+        </style>
+        
+  
+        
 </head>
 
 <body>
 
     <body>
 
+      
+
 
       
     
 
-    <!--menu y header-->
-
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link active"
-                href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="eventos.html">Eventos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link"
-                href="alquiler.html">Alquiler</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="conoceBanos.html">Conoce
-                Baños</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">Sobre nosotros</a>
-        </li>
-
-
-    </ul>
-
+        <script>
+            /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+      function myFunction() {
+          var x = document.getElementById("myTopnav");
+          if (x.className === "topnav") {
+            x.className += " responsive";
+          } else {
+            x.className = "topnav";
+          }
+        }
+      </script>
+          <ul class="nav justify-content-end">
+            <div class="topnav" id="myTopnav">
+                <a href="index.html" class="active">Inicio</a>
+                <a href="eventos.html">Eventos</a>
+                <a href="alquiler.html">Alquiler</a>
+                <a href="conoceBanos.html">Conoce Baños</a>
+                <div class="dropdown">
+                  <button class="dropbtn">Actividades
+                    <i class="fa fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown-content">
+                    <a href="conoceBanos.html">Monumentos y patrimonio cultural</a>
+                    <a href="conoceBanos.html">Rutas de senderismo</a>
+                    <a href="conoceBanos.html">Gastronomia y tradicion</a>
+                  </div>
+                </div>
+                <a href="aboutus.html">Sobre nosotros</a>
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+              </div>
+        </ul> 
         <div class="jumbotron-fluid">
 
             <div class="container">
@@ -234,23 +251,27 @@
                 <article class="row">
                     <div class="col 6">
                         <H2 class=>FORMULARIO DE EVENTO</H2>
-                        <form class="col 3">
+                        <form id="confeti" class="col 3">
                             <fieldset class="col 2">
                                 <legend>DATOS</legend>
                                 Nombre:<br>
-                                <input type="text" name="nombre"><br>
+                                <input type="text" name="nombre" required><br>
                                 Apellidos:<br>
-                                <input type="text" name="apellidos" size="45px">
+                                <input type="text" name="apellidos" size="30px">
                                 <br>
                                 Teléfono:<br>
                                 <input type="telefono" name="telefono"><br>
                                 DNI:<br>
-                                <input type="text" name="DNI"><br>
+                                <input type="text" name="DNI" required><br>
+                                Correo electrónico:<br>
+                                <input type="text" name="correo" required><br>
 
                                 Tipo de evento<br>
-                                <input type="radio" name="familia" value="familia" checked> Celebración familiar<br>
-                                <input type="radio" name="fiesta" value="fiesta"> Fiesta privada<br>
-                                <input type="radio" name="otro" value="otro"> Otro<br>
+                            
+                                <input type="radio" name="tipo" value="" checked> Celebración familiar<br>
+                                <input type="radio" name="tipo" value=""> Fiesta privada<br>
+                                <input type="radio" name="tipo" value="">  Otro<br>
+                               
                             </fieldset>
                             <br>
                             <fieldset>
@@ -262,11 +283,13 @@
                                     type="button" value="Comprobar asistencia">
                                 <br>
                                 <br>
-                                <input type="checkbox" name="" id="checked"> He leído y acepto los términos y
+                                <input type="checkbox" name="condiciones" id="checked" required> He leído y acepto los términos y
                                 condiciones de uso
                                 <br>
                                 <br>
                                 <input type="submit" value="Enviar"> <input type="reset" value="Limpiar formulario">
+
+                                <input id="premio" class="sorteo" type="button" onclick="" value="Probar suerte">
                             </fieldset>
 
                         </form>
@@ -305,7 +328,45 @@
                 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
                 crossorigin="anonymous"></script>
 
+        <script>
 
+
+
+
+
+
+
+$("input:last").css("background", "yellow")
+
+
+$(".sorteo").click(function(){
+    var aleatorio = Math.round(Math.random()*20);
+
+if (aleatorio > 10) {
+    alert("Enhorabuena!! Has conseguido un fin de semana de gratuito, su código de reserva es el: 123 456")
+    $(".sorteo").css("background","green").css("color","white")
+    $("input:last").prop('disabled', true);
+    $("#confeti").css("background", "url('https://img.webme.com/pic/c/cssplantillas/confeti.gif') repeat fixed");
+   
+   
+    
+    
+
+}else if(aleatorio > 0 && aleatorio < 10){
+    alert("Descuento del "+aleatorio+" % para tu próxima reserva, su código de reserva es el: 123 456 ")
+    $(".sorteo").css("background","red").css("color","white")
+    $("input:last").prop('disabled', true);  
+}else {
+    alert("No has obtenido nada esta vez, sigue probando :(")
+    $(".sorteo").css("background","red").css("color","white")
+    $("input:last").prop('disabled', true); 
+}
+
+});
+
+
+
+        </script>
 
     </body>
 

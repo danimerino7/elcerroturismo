@@ -145,35 +145,42 @@
     </style>
 </head>
 
-
+<link rel="stylesheet" href="estilos.css">
 <body>
 
 
-    
-    <!--menu y header-->
-
+    <script>
+        /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+  function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
     <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link active"
-                href="index.html">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="eventos.html">Eventos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link"
-                href="alquiler.html">Alquiler</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="conoceBanos.html">Conoce
-                Baños</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="aboutus.html">Sobre nosotros</a>
-        </li>
-
-
-    </ul>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="eventos.html">Eventos</a>
+        <a href="alquiler.html">Alquiler</a>
+        <a href="conoceBanos.html">Conoce Baños</a>
+        <div class="dropdown">
+          <button class="dropbtn">Actividades
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="conoceBanos.html">Monumentos y patrimonio cultural</a>
+            <a href="conoceBanos.html">Rutas de senderismo</a>
+            <a href="conoceBanos.html">Gastronomia y tradicion</a>
+          </div>
+        </div>
+        <a href="aboutus.html">Sobre nosotros</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+      </div>
+</ul> 
+   
     <div class="jumbotron-fluid">
 
         <div class="container">
